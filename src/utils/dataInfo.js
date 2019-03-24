@@ -4,7 +4,7 @@ module.exports = {
   contentModel: 'pages',
   assetInfo: {
     hero_image: {
-      title: 'Jeff Close Up',
+      title: 'Jeff Close U',
       contentType: 'image/png',
       fileName: 'Jeff-Close-up.png'
     }

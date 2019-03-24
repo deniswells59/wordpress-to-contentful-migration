@@ -16,12 +16,23 @@ async function createAsset({ client, contentfulData: { title, contentType, fileN
     }
   };
 
+  const { items } = await client.getAssets({
+    'fields.title': title
+  });
+
+  const assetAlreadyExists = items.length > 0;
+  if (assetAlreadyExists) {
+    return items[0].sys.id;
+  }
+
   const asset = await client.createAsset(assetData);
   return asset.sys.id;
 }
 
 async function publishAsset({ assetId, client }) {
   const asset = await client.getAsset(assetId);
+  if (asset.isPublished()) return;
+
   await asset.processForAllLocales();
 
   const processedAsset = await client.getAsset(assetId);
