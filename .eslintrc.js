@@ -3,6 +3,7 @@ module.exports = {
   plugins: ['prettier'],
   rules: {
     'prettier/prettier': ['error'],
-    'object-curly-spacing': ['error', 'always']
+    'object-curly-spacing': ['error', 'always'],
+    'comma-dangle': ['error', 'always']
   }
 };

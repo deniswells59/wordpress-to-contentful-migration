@@ -6,7 +6,7 @@ const fetchWPInfo = require('./utils/fetchWPInfo');
 const createAndPublishAsset = require('./utils/createAndPublishAsset');
 const createAndPublishEntry = require('./utils/createAndPublishEntry');
 
-const url = path => {
+const url = () => {
   return `${process.env.WORDPRESS_API_URL}${wpUrlSuffix}`;
 };
 
