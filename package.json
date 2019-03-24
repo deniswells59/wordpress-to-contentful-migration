@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "migrate": "MIGRATION_ENV=MIGRATE node index.js",
-    "preview": "MIGRATION_ENV=PREVIEW node index.js",
+    "migrate": "MIGRATION_ENV=MIGRATE node src/index.js",
+    "preview": "MIGRATION_ENV=PREVIEW node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

@@ -1,10 +1,10 @@
 require('dotenv').config();
 
-const { wpUrlSuffix } = require('./dataInfo');
-const getClient = require('./getClient');
-const fetchWPInfo = require('./fetchWPInfo');
-const createAndPublishAsset = require('./createAndPublishAsset');
-const createAndPublishEntry = require('./createAndPublishEntry');
+const { wpUrlSuffix } = require('./utils/dataInfo');
+const getClient = require('./utils/getClient');
+const fetchWPInfo = require('./utils/fetchWPInfo');
+const createAndPublishAsset = require('./utils/createAndPublishAsset');
+const createAndPublishEntry = require('./utils/createAndPublishEntry');
 
 const url = path => {
   return `${process.env.WORDPRESS_API_URL}${wpUrlSuffix}`;
