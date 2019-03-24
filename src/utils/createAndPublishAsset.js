@@ -1,6 +1,7 @@
 const { assetInfo } = require('./dataInfo');
 
 async function createAsset({ client, contentfulData: { title, contentType, fileName, upload } }) {
+  if (!title) return null;
   const assetData = {
     fields: {
       title: {
@@ -53,8 +54,9 @@ async function createAndPublishAsset({ wordpressData, client }) {
           };
 
           const assetId = await createAsset({ contentfulData, client });
-          await publishAsset({ assetId, client });
+          if (!assetId) return null;
 
+          await publishAsset({ assetId, client });
           return { [assetWPName]: assetId };
         }
       })

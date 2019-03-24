@@ -21,13 +21,13 @@ async function init() {
     }
 
     const assetsById = await createAndPublishAsset({ wordpressData, client });
-    // const entry = await createAndPublishEntry({
-    //   wordpressData,
-    //   assetsById,
-    //   client
-    // });
+    const entry = await createAndPublishEntry({
+      wordpressData,
+      assetsById,
+      client
+    });
 
-    // console.log('Successful entry created: ', entry);
+    console.log('Successful entry created: ', entry);
   } catch (error) {
     console.log('Error at index.js: ', error);
   }
